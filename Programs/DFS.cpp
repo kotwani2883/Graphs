@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void dfs(int node,vector<int>&vis,vector<int>adj,vector<int>&storeDfs){
+void dfs(int node,vector<int>&vis,vector<int>adj[],vector<int>&storeDfs){
 	storeDfs.push_back(node);
 	vis[node]=1;
 	for(auto it:adj[node]){
@@ -11,7 +11,7 @@ void dfs(int node,vector<int>&vis,vector<int>adj,vector<int>&storeDfs){
 	}
 }
 
-vector<int>dfsOfGraph(int v,vector<int>adj){
+vector<int>dfsOfGraph(int v,vector<int>adj[]){
 	vector<int>storeDfs;
 	vector<int>vis(v+1,0);
 	for(int i=1;i<=v;i++){
@@ -20,7 +20,19 @@ vector<int>dfsOfGraph(int v,vector<int>adj){
 	}
 }
 int main(){
-	
+	int t;
+	cin>>t;
+	while(t--){
+		int V,e;
+		cin>>V>>e;
+		vector<int>adj[V];
+		for(int i=0;i<e;i++){
+			int u,v;
+			cin>>u>>v;
+			adj[u].push_back(v);
+			adj[v].push_back(u);
+		}
+	}
 }
 
 //Time Complexity:O(N+E)
