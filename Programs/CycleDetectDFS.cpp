@@ -6,9 +6,10 @@ using namespace std;
 bool checkForCycle(int node,int parent ,vector<int>&vis,vector<int>adj[]){
 	vis[node]=1;
 	for(auto it:adj[node]){
-		if(vis[it]==0)
+		if(vis[it]==0){
 		if(checkForCycle(it,node,vis,adj))
 		return true;
+	}
 		else if(it!=parent)
 		return true;
 		

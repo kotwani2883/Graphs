@@ -4,7 +4,7 @@ using namespace std;
 vector<int>bfsOfGraph(int v,vector<int>adj[]){
 	vector<int>bfs;
 	vector<int>vis(v+1,0);//visited Array
-	for(int i=1;i<=v;i++){
+	for(int i=1;i<=v;i++){  //Ensuring All Components
 		if(!vis[i]){
 			queue<int>q;
 			vis[i]=1;

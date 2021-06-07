@@ -6,7 +6,7 @@ using namespace std;
 bool checkForCycle(int s,int v,vector<int>&adj[],vector<int>&vis){
 	queue<pair<int,int>>q;
 	vis[s]=true;
-	q.push_back({s,-1});//For starting node prev=-1
+	q.push_back({s,-1});//For starting node prev=-1 , second Node for Storing Parent Node
 	while(!q.empty()){
 		int node=q.front.first;
 		int parent=q.front.second;
@@ -25,7 +25,7 @@ bool checkForCycle(int s,int v,vector<int>&adj[],vector<int>&vis){
 
 bool isCycle(int v,vector<int>adj[]){
 	vector<int>vis(v+1,0);
-	for(int i=0;i<v;i++){
+	for(int i=0;i<v;i++){ //Ensuring All Components
 		if(!vis[i])
 		if(checkForCycle(i,v,adj,vis))
 		return true;
