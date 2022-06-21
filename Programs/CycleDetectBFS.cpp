@@ -10,6 +10,7 @@ bool checkForCycle(int s,int v,vector<int>&adj[],vector<int>&vis){
 	while(!q.empty()){
 		int node=q.front.first;
 		int parent=q.front.second;
+		q.pop();
 		for(auto it:adj[node]){
 			if(!vis[it]){
 				vis[it]=true;
